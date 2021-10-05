@@ -150,16 +150,18 @@ include(sitkMaxDimensionOption)
 #-----------------------------------------------------------------------------
 # Setup build type
 #------------------------------------------------------------------------------
-
+message("CMAKE_BUILD_TYPE 0 = ${CMAKE_BUILD_TYPE}")
 # By default, let's build as Debug
 if(NOT DEFINED CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE "Debug")
+  set(CMAKE_BUILD_TYPE "Release")
 endif()
+message("CMAKE_BUILD_TYPE 1 = ${CMAKE_BUILD_TYPE}")
 
 # let a dashboard override the default.
 if(CTEST_BUILD_CONFIGURATION)
   set(CMAKE_BUILD_TYPE "${CTEST_BUILD_CONFIGURATION}")
 endif()
+message("CMAKE_BUILD_TYPE 2 = ${CMAKE_BUILD_TYPE}")
 
 #-------------------------------------------------------------------------
 # augment compiler flags
